@@ -37,7 +37,7 @@ class SelfCard extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Text(
-              'Anuradha',
+              'ANURADHA',
               style: TextStyle(color: Colors.amberAccent[200], letterSpacing: 2.0,fontSize: 28.0,fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 30),
