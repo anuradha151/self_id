@@ -5,7 +5,15 @@ void main() => runApp(MaterialApp(
       home: SelfCard(),
     ));
 
-class SelfCard extends StatelessWidget {
+class SelfCard extends StatefulWidget {
+  @override
+  _SelfCardState createState() => _SelfCardState();
+}
+
+class _SelfCardState extends State<SelfCard> {
+
+  int skillLevel = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,6 +24,15 @@ class SelfCard extends StatelessWidget {
         backgroundColor: Colors.grey[850],
         elevation: 0.0,
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          setState(() {
+            skillLevel += 1;
+          });
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.grey[800],
+      ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30, 40, 30, 0.0),
         child: Column(
@@ -24,7 +41,7 @@ class SelfCard extends StatelessWidget {
             Center(
               child: CircleAvatar(
                 backgroundImage: AssetImage('assets/me.jpg'),
-                radius: 80.0,
+                radius: 50.0,
               ),
             ),
             Divider(
@@ -47,7 +64,7 @@ class SelfCard extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Text(
-              '80% ',
+              '$skillLevel',
               style: TextStyle(color: Colors.amberAccent[200], letterSpacing: 2.0,fontSize: 28.0,fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 30.0),
